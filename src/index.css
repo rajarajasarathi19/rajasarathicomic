@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-comic {
+    font-family: 'Bangers', cursive, system-ui, sans-serif;
+    letter-spacing: 0.05em;
+  }
+  .font-speech {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+  }
+  .font-hero {
+    font-family: 'Bungee', cursive, sans-serif;
+  }
+  .font-marker {
+    font-family: 'Permanent Marker', cursive, sans-serif;
+  }
+  
+  /* Authentic Halftone Dot Pattern */
+  .bg-halftone {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px);
+    background-size: 8px 8px;
+  }
+
+  .bg-halftone-dense {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.2) 2px, transparent 2px);
+    background-size: 6px 6px;
+  }
+
+  .bg-halftone-white {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px);
+    background-size: 8px 8px;
+  }
+
+  /* Comic Book Box Shadows */
+  .comic-border {
+    border: 3.5px solid #000000;
+    box-shadow: 4px 4px 0px #000000;
+  }
+
+  .comic-border-lg {
+    border: 4px solid #000000;
+    box-shadow: 6px 6px 0px #000000;
+  }
+
+  .comic-border-sm {
+    border: 2.5px solid #000000;
+    box-shadow: 3px 3px 0px #000000;
+  }
+
+  .comic-button {
+    border: 3px solid #000000;
+    box-shadow: 3px 3px 0px #000000;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .comic-button:hover:not(:disabled) {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px #000000;
+  }
+
+  .comic-button:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px #000000;
+  }
+}
+
+/* Custom Speech Bubble Tails */
+.speech-bubble-tail-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #ffffff;
+  filter: drop-shadow(0 2px 0 #000000);
+}
+
+.speech-bubble-tail-top::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #ffffff;
+}
+
+/* Print Layout for PDF & Physical Print */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-inside: avoid;
+  }
+}

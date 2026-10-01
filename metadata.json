@@ -1,0 +1,8 @@
+{
+  "name": "ComicCraft - AI Comic Story Creator",
+  "description": "Create vivid comic books, graphic novels, and storyboards powered by Gemini models. Features multi-panel story generation, dialogue scripts, dynamic layouts, character profiles, sound effects, and reading mode.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
